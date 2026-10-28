@@ -1,0 +1,33 @@
+- id: 8
+  name: Ernie Johnston
+  date: 2016-01-14 21:53:37 -0600
+  message: |
+    Good detail. But I think Item 1 should be combined with Number 5 and the rest reordered. Also Item 9 says “the the SSID.”
+- id: 9
+  parent: 8
+  name: Matt Frederick
+  url: http://zerooneok.wordpress.com
+  date: 2016-01-14 22:00:00 -0600
+  message: |
+    Nice catch Ernie! I went ahead and removed step 1 completely and renumbered. Shouldn’t have been there. I had wrote that before thinking of the console part and forgot to go back. Thanks!
+- id: 47
+  name: Simon
+  date: 2016-09-07 14:27:54 -0500
+  message: |
+    It does not work anymore starting with InstantOS 4.2. The “Disable SSID on uplink failure” option have been replaced by a new, larger set of options.
+- id: 48
+  parent: 47
+  name: Matt Frederick
+  url: /
+  date: 2016-09-07 16:20:36 -0500
+  message: |
+    Thanks Simon, I will add a note at the top.
+- id: 55
+  name: Mathieu Champagne
+  date: 2016-10-26 16:51:10 -0500
+  message: |
+    I’ve been testing this procedure last week running InstantOS 4.2.4.3 (Early Deployment) and it worked perfectly with IAP-275 and IAP-277. The “Disable SSID on uplink failure” have more option now but from the factory default config, these setting are disabled by default anyway.
+
+    Step 1 to 7 can be skip if you connect your IAP on a DHCP network (via PoE switchport or Injector) for the initial config. Once booted it will broadcast the “instant” SSID like step 8 and then from the GUI you can set your static IP for the Virtual Controller.
+
+    When you configure your SSID in the VLAN tab (step 13) I recommend to chose Virtual Controller assigned for the Client IP assignment and Default for the Client VLAN assignment. This way, when you do your survey, if you need to change a settings you just have to connect to your survey SSID and you can access the GUI via the default gateway IP of your wireless connection.

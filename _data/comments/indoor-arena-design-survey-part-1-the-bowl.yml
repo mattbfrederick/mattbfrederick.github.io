@@ -1,0 +1,13 @@
+- id: 7
+  name: Wilfred Todd Smith
+  url: http://wifitodd.com
+  date: 2016-01-11 12:24:59 -0600
+  message: |
+    Fantastic! Really good read. I like the detail you put into the article. I can’t wait for the other segments!
+- id: 10
+  parent: 7
+  name: Matt Frederick
+  url: http://zerooneok.wordpress.com
+  date: 2016-01-14 22:00:25 -0600
+  message: |
+    Thanks Todd!

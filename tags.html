@@ -1,0 +1,66 @@
+---
+layout: page
+title: Tags
+permalink: /tags/
+# Old WordPress tag archive URLs
+redirect_from:
+  - /tag/2-4/
+  - /tag/active-survey/
+  - /tag/ap-270/
+  - /tag/arena/
+  - /tag/aruba/
+  - /tag/aruba-networks/
+  - /tag/beacon/
+  - /tag/ble/
+  - /tag/capacity/
+  - /tag/command-line/
+  - /tag/consultant/
+  - /tag/consulting/
+  - /tag/controller/
+  - /tag/ekahau/
+  - /tag/ess/
+  - /tag/high-density/
+  - /tag/iap/
+  - /tag/large-public-venue/
+  - /tag/mesh/
+  - /tag/mobility/
+  - /tag/netsh/
+  - /tag/networking/
+  - /tag/passive-survey/
+  - /tag/predictive/
+  - /tag/remote/
+  - /tag/rf-survey/
+  - /tag/site-survey/
+  - /tag/survey/
+  - /tag/uplink/
+  - /tag/vap/
+  - /tag/webinar/
+  - /tag/wifi/
+  - /tag/wifi-design/
+  - /tag/windows-10/
+  - /tag/windows-7/
+  - /tag/windows-8/
+  - /tag/wipe/
+  - /tag/wireless/
+  - /tag/wlan/
+---
+{%- assign tag_names = "" | split: "" -%}
+{%- for tag in site.tags -%}
+  {%- assign tag_names = tag_names | push: tag[0] -%}
+{%- endfor -%}
+{%- assign tag_names = tag_names | sort_natural -%}
+
+<p class="tag-index">
+  {%- for name in tag_names %}
+  <a href="#{{ name | slugify }}">{{ name }}</a>&nbsp;({{ site.tags[name].size }}){% unless forloop.last %} &middot;{% endunless %}
+  {%- endfor %}
+</p>
+
+{% for name in tag_names %}
+<h2 id="{{ name | slugify }}">{{ name }}</h2>
+<ul>
+  {%- for post in site.tags[name] %}
+  <li><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a> <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span></li>
+  {%- endfor %}
+</ul>
+{% endfor %}

@@ -1,0 +1,15 @@
+{%- assign c = include.comment -%}
+<div class="comment-meta">
+  {%- if c.type == "pingback" %}<span class="comment-type">Pingback:</span> {% endif -%}
+  <span class="comment-author">
+    {%- if c.url -%}
+      <a href="{{ c.url | relative_url }}" rel="external nofollow ugc">{{ c.name | escape }}</a>
+    {%- else -%}
+      {{ c.name | escape }}
+    {%- endif -%}
+  </span>
+  <time class="comment-date" datetime="{{ c.date | date_to_xmlschema }}">{{ c.date | date: "%b %-d, %Y" }}</time>
+</div>
+<div class="comment-body">
+  {{ c.message | markdownify }}
+</div>

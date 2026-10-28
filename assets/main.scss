@@ -1,0 +1,99 @@
+---
+# Front matter tells Jekyll to process this file with Sass.
+---
+
+@import "minima";
+
+// Images carried over from WordPress
+.post-content img {
+  height: auto;
+}
+
+.post-content img.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.post-content .caption {
+  margin-top: -$spacing-unit / 4;
+  font-size: $small-font-size;
+  color: $grey-color;
+}
+
+.post-content .indent-1 { margin-left: 2em; }
+.post-content .indent-2 { margin-left: 4em; }
+.post-content .indent-3 { margin-left: 6em; }
+
+// Long CLI output scrolls sideways instead of wrapping
+.post-content pre code {
+  white-space: pre;
+}
+
+.post-tags {
+  font-size: $small-font-size;
+  color: $grey-color;
+}
+
+.post-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: $spacing-unit;
+  margin: $spacing-unit 0;
+  padding-top: $spacing-unit / 2;
+  border-top: 1px solid $grey-color-light;
+  font-size: $small-font-size;
+
+  .post-nav-next {
+    margin-left: auto;
+    text-align: right;
+  }
+}
+
+.comments {
+  margin-top: $spacing-unit;
+
+  h2 {
+    font-size: 20px;
+  }
+}
+
+.comment-list,
+.comment-replies {
+  list-style: none;
+  margin-left: 0;
+}
+
+.comment {
+  margin-top: $spacing-unit / 2;
+  padding: $spacing-unit / 2;
+  border: 1px solid $grey-color-light;
+  border-radius: 4px;
+}
+
+.comment-replies .comment {
+  margin-left: $spacing-unit;
+  border-left: 3px solid $grey-color-light;
+}
+
+.comment-meta {
+  font-size: $small-font-size;
+  color: $grey-color;
+
+  .comment-author {
+    font-weight: bold;
+    color: $text-color;
+  }
+
+  .comment-date {
+    margin-left: 0.5em;
+  }
+}
+
+.comment-body p:last-child {
+  margin-bottom: 0;
+}
+
+.tag-index {
+  line-height: 2;
+}
