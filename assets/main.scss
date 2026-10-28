@@ -2,98 +2,1049 @@
 # Front matter tells Jekyll to process this file with Sass.
 ---
 
-@import "minima";
+// FineSine's look, recreated from "Dyad", the WordPress.com theme the blog
+// used before the move (Dyad is GPL-licensed, by Automattic).
 
-// Images carried over from WordPress
-.post-content img {
+$dark: #242629;
+$dark-2: #292c2f;
+$comments-bg: #33373b;
+$text: #6a6c6e;
+$heading: #1a1c1e;
+$accent: #e7ae01;
+$accent-hover: #f0b80e;
+$blue: #678db8;
+$rule: #e0e0e0;
+
+$sans: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$serif: "Noto Serif", Georgia, serif;
+$mono: "Courier 10 Pitch", Courier, monospace;
+
+// ------------------------------------------------------------------ base
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: $dark;
+  color: $text;
+  font-family: $sans;
+  font-size: 1.8rem;
+  line-height: 1.62;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  clear: both;
+  color: $heading;
+  font-family: $serif;
+  font-weight: 700;
+  line-height: 1.38;
+  margin: 0.83em 0;
+}
+
+h1 { font-size: 5rem; }
+h2 { font-size: 2.6rem; }
+h3 { font-size: 2.2rem; }
+h4 { font-size: 2rem; margin: 1.33em 0; }
+
+h5,
+h6 {
+  font-family: $sans;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+h5 { font-size: 1.7rem; }
+h6 { font-size: 1.5rem; }
+
+p {
+  margin: 0;
+  padding: 0 0 1.5em;
+}
+
+ul,
+ol {
+  margin: 0 0 1.5em 3em;
+  padding: 0;
+}
+
+li > ul,
+li > ol {
+  margin-bottom: 0;
+}
+
+img {
+  border: 0;
   height: auto;
+  max-width: 100%;
 }
 
-.post-content img.aligncenter {
+hr {
+  background-color: #eee;
+  border: 0;
+  height: 1px;
+  margin: 0 0 1.5em;
+}
+
+blockquote {
+  border-left: 3px solid #ddd;
+  color: #393d41;
+  font-family: $serif;
+  font-size: 1.05em;
+  font-style: italic;
+  margin: 0 0 1.5em 1.5em;
+  padding-left: 1.5em;
+
+  p:last-child {
+    padding-bottom: 0;
+  }
+}
+
+table {
+  border: 1px solid #ddd;
+  border-collapse: collapse;
+  line-height: 1.38;
+  margin: 0 0 1.62em;
+  width: 100%;
+}
+
+td,
+th {
+  border-bottom: 1px solid #ddd;
+  border-left: 1px solid #ddd;
+  padding: 10px 20px;
+  text-align: left;
+}
+
+code,
+kbd,
+tt {
+  font-family: "Lucida Console", Monaco, "Courier New", monospace;
+  font-size: 90%;
+}
+
+pre {
+  background: #eee;
+  font-family: $mono;
+  font-size: 1.5rem;
+  line-height: 1.6;
+  margin: 0 0 1.6em;
+  max-width: 100%;
+  overflow: auto;
+  padding: 1.6em;
+
+  code {
+    font-family: inherit;
+    font-size: inherit;
+    white-space: pre;
+  }
+}
+
+.screen-reader-text {
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  overflow: hidden;
+  position: absolute !important;
+  width: 1px;
+}
+
+.icon {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  fill: currentColor;
 }
 
-.post-content .caption {
-  margin-top: -$spacing-unit / 4;
-  font-size: $small-font-size;
-  color: $grey-color;
-}
+// ---------------------------------------------------------------- header
 
-.post-content .indent-1 { margin-left: 2em; }
-.post-content .indent-2 { margin-left: 4em; }
-.post-content .indent-3 { margin-left: 6em; }
-
-// Long CLI output scrolls sideways instead of wrapping
-.post-content pre code {
-  white-space: pre;
-}
-
-.post-tags {
-  font-size: $small-font-size;
-  color: $grey-color;
-}
-
-.post-nav {
+.site-header {
+  align-items: center;
+  background-color: rgba(36, 38, 41, 0.8);
+  color: #fff;
   display: flex;
   justify-content: space-between;
-  gap: $spacing-unit;
-  margin: $spacing-unit 0;
-  padding-top: $spacing-unit / 2;
-  border-top: 1px solid $grey-color-light;
-  font-size: $small-font-size;
+  left: 0;
+  min-height: 90px;
+  padding: 15px 40px;
+  position: absolute;
+  right: 0;
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  top: 0;
+  z-index: 5;
+}
 
-  .post-nav-next {
+.home .site-header {
+  background-color: rgba(36, 38, 41, 0.4);
+}
+
+.site-title {
+  font-family: $serif;
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0;
+  padding: 0;
+
+  a,
+  a:hover,
+  a:focus {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+.main-navigation {
+  align-self: flex-start;
+  padding-top: 18px;
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 2.4rem;
+    justify-content: flex-end;
+    list-style: none;
+    margin: 0;
+  }
+
+  a {
+    color: #fff;
+    font-size: 1.4rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+}
+
+// ------------------------------------------------- home: banner + cards
+
+.site-banner {
+  background-color: $dark;
+  left: 0;
+  position: fixed;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.site-banner-media {
+  background-color: $dark;
+  background-position: center center;
+  background-size: cover;
+  height: 0;
+  padding-bottom: 37%;
+  position: relative;
+
+  // Darken the bottom of the photo so the tagline stands out
+  &:before {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 100%);
+    bottom: 0;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 30%;
+  }
+}
+
+.site-banner-header {
+  bottom: 6rem;
+  color: #fff;
+  left: 25%;
+  padding: 3rem 0;
+  position: absolute;
+  right: 25%;
+  text-align: center;
+  z-index: 5;
+
+  &:before,
+  &:after {
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    content: "";
+    position: absolute;
+  }
+
+  &:before {
+    left: 25%;
+    top: 0;
+    width: 50%;
+  }
+
+  &:after {
+    bottom: 0;
+    left: 44%;
+    width: 12%;
+  }
+}
+
+.site-banner-title {
+  color: #fff;
+  font-size: 4.5rem;
+  margin: 0 3rem;
+  padding: 0;
+
+  &:before {
+    background-color: $blue;
+    content: "";
+    height: 8px;
+    left: 50%;
+    margin: -4px 0 0 -60px;
+    position: absolute;
+    top: 0;
+    width: 120px;
+  }
+}
+
+.home .content-area {
+  background-color: #fff;
+  margin-top: 37%;
+  position: relative;
+  z-index: 3;
+}
+
+.posts {
+  background-color: $dark;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.post-card {
+  aspect-ratio: 3 / 2;
+  background: #fff;
+  overflow: hidden;
+  position: relative;
+  width: 33.3333%;
+
+  // Thin rule behind the round icon
+  &:before {
+    border-top: 1px solid #d8dfe6;
+    content: "";
+    left: 15%;
+    margin-top: 20px;
+    position: absolute;
+    right: 15%;
+    top: 10%;
+    z-index: 1;
+  }
+
+  &:hover .link-more a {
+    background-color: $accent-hover;
+  }
+}
+
+// Summaries short enough to fit don't need the fade
+.post-card.is-short .post-card-content {
+  height: 100%;
+}
+
+.post-card.is-short .link-more {
+  position: relative;
+
+  &:before {
+    display: none;
+  }
+}
+
+.post-card-icon {
+  align-items: center;
+  background: #fff;
+  border: 1px solid #c6cfd8;
+  border-radius: 50%;
+  color: #abb7c3;
+  display: flex;
+  height: 40px;
+  justify-content: center;
+  left: 50%;
+  margin-left: -20px;
+  position: absolute;
+  top: 10%;
+  width: 40px;
+  z-index: 2;
+}
+
+.post-card-content {
+  height: 80%;
+  left: 0;
+  overflow: hidden;
+  padding: 15% 14% 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.post-card-title {
+  font-size: 3rem;
+  margin: 0;
+  text-align: center;
+
+  a {
+    color: $heading;
+  }
+}
+
+.post-card-summary {
+  line-height: 1.75;
+  padding: 2rem 0 0;
+}
+
+.link-more {
+  background: #fff;
+  bottom: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  right: 0;
+  text-align: center;
+
+  // Fade the summary out above the button
+  &:before {
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #fff 100%);
+    bottom: 100%;
+    content: "";
+    height: 6em;
+    left: 0;
+    position: absolute;
+    right: 0;
+  }
+
+  a {
+    background-color: $accent;
+    color: #fff;
+    display: inline-block;
+    font-size: 1.4rem;
+    letter-spacing: 0.1em;
+    margin: 1em 0 0;
+    padding: 0.62em 1.62em;
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: background-color 0.3s;
+    z-index: 10;
+  }
+}
+
+// The whole card is clickable, with a soft frame on hover
+.cover-link {
+  border: 1px solid transparent;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: border-color 0.3s, border-width 0.3s;
+  z-index: 4;
+
+  &:hover,
+  &:focus {
+    border-color: rgba(0, 0, 0, 0.2);
+    border-width: 15px;
+  }
+}
+
+// ---------------------------------------------------- posts and pages
+
+.singular .site-content {
+  background: #fff;
+  display: flow-root; // keep .entry's top margin inside the white area
+  padding-top: 13.5rem;
+}
+
+.entry {
+  margin: 50px auto 0;
+  max-width: 700px;
+  padding-bottom: 2rem;
+  position: relative;
+
+  // Rule through the yellow icon
+  &:before {
+    border-top: 1px solid $rule;
+    content: "";
+    left: 25%;
+    position: absolute;
+    right: 25%;
+    top: 0;
+  }
+}
+
+.entry-icon {
+  align-items: center;
+  background: $accent;
+  border-radius: 50%;
+  color: #fff;
+  display: flex;
+  height: 36px;
+  justify-content: center;
+  left: 50%;
+  margin: -18px 0 0 -18px;
+  position: absolute;
+  top: 0;
+  width: 36px;
+}
+
+.entry-header {
+  font-style: italic;
+  padding: 3rem 0 3em;
+  text-align: center;
+}
+
+.entry-title {
+  font-style: normal;
+  margin: 1rem 0 0;
+}
+
+.entry-posted {
+  font-size: 1.5rem;
+  padding-top: 1.5em;
+
+  .p-author,
+  time {
+    font-style: normal;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+}
+
+.entry-content {
+  line-height: 1.75;
+
+  a {
+    text-decoration: underline;
+  }
+
+  // Captions under images carried over from WordPress
+  .caption {
+    font-size: 80%;
+    line-height: 1.38;
+    margin-top: -1.2em;
+    text-align: center;
+
+    em {
+      font-style: normal;
+    }
+  }
+
+  img.aligncenter {
+    display: block;
     margin-left: auto;
-    text-align: right;
+    margin-right: auto;
+  }
+
+  .indent-1 { margin-left: 30px; }
+  .indent-2 { margin-left: 60px; }
+  .indent-3 { margin-left: 90px; }
+
+  // Code blocks get Dyad's yellow tab down the right side
+  div.highlighter-rouge {
+    margin: 0 0 1.6em;
+    position: relative;
+
+    pre {
+      margin: 0;
+      padding-right: 3.6em;
+    }
+
+    &:after {
+      background: $accent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M5.5 4 1.5 8l4 4 1-1-3-3 3-3zm5 0-1 1 3 3-3 3 1 1 4-4z' fill='%23fff'/%3E%3C/svg%3E") no-repeat center 0.6em / 16px;
+      content: "";
+      height: 100%;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 26px;
+    }
+  }
+
+  :not(pre) > code {
+    margin: 0 0.2em;
   }
 }
 
-.comments {
-  margin-top: $spacing-unit;
-
-  h2 {
-    font-size: 20px;
-  }
-}
-
-.comment-list,
-.comment-replies {
+.blogroll {
   list-style: none;
   margin-left: 0;
-}
-
-.comment {
-  margin-top: $spacing-unit / 2;
-  padding: $spacing-unit / 2;
-  border: 1px solid $grey-color-light;
-  border-radius: 4px;
-}
-
-.comment-replies .comment {
-  margin-left: $spacing-unit;
-  border-left: 3px solid $grey-color-light;
-}
-
-.comment-meta {
-  font-size: $small-font-size;
-  color: $grey-color;
-
-  .comment-author {
-    font-weight: bold;
-    color: $text-color;
-  }
-
-  .comment-date {
-    margin-left: 0.5em;
-  }
-}
-
-.comment-body p:last-child {
-  margin-bottom: 0;
+  text-align: center;
 }
 
 .tag-index {
   line-height: 2;
+  text-align: center;
+}
+
+.tags-links {
+  font-size: 90%;
+  margin: 5rem 0 0;
+  text-align: center;
+
+  a {
+    background-color: #efefef;
+    color: #949494;
+    display: inline-block;
+    margin: 0 0.5em 0.5em 0;
+    padding: 0.25em 0.75em;
+    transition: background-color 0.4s, color 0.4s;
+
+    &:hover,
+    &:focus {
+      background-color: #e0e0e0;
+      color: #777;
+      text-decoration: none;
+    }
+  }
+}
+
+.post-navigation {
+  margin: 2em auto 0;
+  max-width: 72%;
+  padding: 3em 0;
+  position: relative;
+  text-align: center;
+
+  &:before {
+    border-top: 1px solid $rule;
+    content: "";
+    left: 37.5%;
+    position: absolute;
+    right: 37.5%;
+    top: 0;
+  }
+
+  &:after {
+    background-color: $accent;
+    border-radius: 12px;
+    content: "";
+    height: 12px;
+    left: 50%;
+    margin: -6px 0 0 -6px;
+    position: absolute;
+    top: 0;
+    width: 12px;
+  }
+
+  .nav-previous,
+  .nav-next {
+    padding-bottom: 2em;
+  }
+
+  a:hover {
+    text-decoration: none;
+
+    .nav-title {
+      text-decoration: underline;
+    }
+  }
+
+  .nav-subtitle {
+    color: #9da5ad;
+    display: block;
+    font-size: 1.3rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .nav-title {
+    font-family: $serif;
+  }
+}
+
+// --------------------------------------------------------------- comments
+
+.comments-area-wrapper {
+  background-color: $comments-bg;
+  color: #a5afba;
+  padding: 8rem 0 5.5rem;
+}
+
+.comments-area {
+  font-size: 1.6rem;
+  margin: 0 auto;
+  max-width: 900px;
+}
+
+.comments-title {
+  border-bottom: 2px solid #48515b;
+  color: #fff;
+  font-size: 2rem;
+  margin: 0 0 60px;
+  padding: 0 0 15px;
+}
+
+.comment-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  .children {
+    list-style: none;
+    margin: 0;
+    padding-left: 50px;
+  }
+}
+
+.comment-body {
+  margin-left: 100px;
+  padding: 0 0 4em;
+}
+
+.children .comment-body {
+  margin-left: 80px;
+}
+
+.comment-meta {
+  border-bottom: 1px solid #4a5057;
+  color: #656c73;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+}
+
+.comment-author {
+  color: #a5afba;
+  font-size: 1.6rem;
+  position: relative;
+
+  .fn {
+    color: #c7cdd2;
+    font-style: normal;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+}
+
+// Marks replies from the blog's author
+.author-badge {
+  align-items: center;
+  background: #a5afba;
+  border-radius: 50%;
+  color: #292c2f;
+  display: flex;
+  height: 21px;
+  justify-content: center;
+  left: -100px;
+  position: absolute;
+  top: 2px;
+  width: 21px;
+
+  .children & {
+    height: 15px;
+    left: -80px;
+    width: 15px;
+
+    .icon {
+      height: 12px;
+      width: 12px;
+    }
+  }
+}
+
+.comment-content {
+  p:last-child {
+    padding-bottom: 0;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+}
+
+// ----------------------------------------------------------------- footer
+
+.site-footer {
+  background-color: $dark-2;
+  color: #616a74;
+  position: relative;
+  text-align: center;
+  z-index: 3;
+}
+
+.footer-bottom-info {
+  background-color: $dark;
+  font-size: 1.4rem;
+  padding: 3rem 5.5rem;
+}
+
+.site-info {
+  padding: 0;
+}
+
+// ------------------------------------------------------------- responsive
+
+@media screen and (min-width: 1401px) {
+  .site-header {
+    position: fixed;
+  }
+}
+
+@media screen and (min-width: 1601px) {
+  .site-banner-title {
+    font-size: 5.2rem;
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .site-banner-header {
+    left: 15%;
+    right: 15%;
+  }
+
+  .site-banner-media {
+    padding-bottom: 40%;
+  }
+
+  .home .content-area {
+    margin-top: 40%;
+  }
+
+  .post-card {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  body {
+    font-size: 1.7rem;
+  }
+
+  h1 {
+    font-size: 4rem;
+  }
+
+  .site-banner-title {
+    font-size: 4rem;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .site-banner {
+    position: relative;
+  }
+
+  .site-banner-title {
+    font-size: 3.5rem;
+  }
+
+  .site-banner-header {
+    bottom: 5rem;
+  }
+
+  .site-banner-media {
+    padding-bottom: 50%;
+  }
+
+  .home .content-area {
+    margin-top: 0;
+  }
+
+  .posts {
+    background: #fff;
+  }
+
+  .post-card {
+    aspect-ratio: auto;
+    width: 100%;
+
+    &:before {
+      margin-top: 20px;
+      top: 4rem;
+    }
+  }
+
+  .post-card-icon {
+    top: 4rem;
+  }
+
+  .post-card-content {
+    height: auto;
+    padding: 12rem 14% 4rem;
+    position: relative;
+  }
+
+  .link-more {
+    position: relative;
+
+    &:before {
+      display: none;
+    }
+  }
+
+  .entry-title {
+    font-size: 4rem;
+  }
+
+  .entry-posted {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .site-header,
+  .home .site-header {
+    background-color: $dark-2;
+    display: block;
+    min-height: 0;
+    padding: 2rem;
+    position: relative;
+    text-align: center;
+  }
+
+  .main-navigation {
+    padding-top: 1rem;
+
+    ul {
+      justify-content: center;
+    }
+  }
+
+  .site-banner-header:after {
+    display: none;
+  }
+
+  .singular .site-content {
+    padding-top: 0;
+  }
+
+  .entry {
+    margin-top: 90px;
+    max-width: 100%;
+    padding-left: 8%;
+    padding-right: 8%;
+  }
+
+  .entry-title {
+    font-size: 3.5rem;
+  }
+
+  .comments-area {
+    max-width: 100%;
+    padding-left: 8%;
+    padding-right: 8%;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  body {
+    font-size: 1.6rem;
+  }
+
+  blockquote {
+    margin-left: 0;
+  }
+
+  .site-title {
+    font-size: 2.2rem;
+  }
+
+  .main-navigation a {
+    font-size: 1.3rem;
+  }
+
+  .site-banner-title {
+    font-size: 2.2rem;
+
+    &:before {
+      height: 4px;
+      margin: -4px 0 0 -40px;
+      width: 80px;
+    }
+  }
+
+  .site-banner-header {
+    bottom: 20px;
+    left: 0;
+    padding-top: 15px;
+    right: 0;
+
+    &:before,
+    &:after {
+      display: none;
+    }
+  }
+
+  .post-card-title {
+    font-size: 2rem;
+  }
+
+  .post-card-content {
+    padding: 10rem 6% 2.6rem;
+  }
+
+  .link-more a {
+    font-size: 1.2rem;
+  }
+
+  .entry {
+    margin-top: 60px;
+  }
+
+  .entry-icon {
+    height: 30px;
+    margin: -15px 0 0 -15px;
+    width: 30px;
+  }
+
+  .entry-title {
+    font-size: 3rem;
+  }
+
+  .entry-posted {
+    font-size: 1.3rem;
+  }
+
+  .entry-content {
+    .indent-1 { margin-left: 15px; }
+    .indent-2 { margin-left: 30px; }
+    .indent-3 { margin-left: 45px; }
+  }
+
+  .post-navigation {
+    max-width: 84%;
+
+    &:before {
+      left: 25%;
+      right: 25%;
+    }
+
+    .nav-subtitle {
+      font-size: 1.2rem;
+    }
+
+    .nav-title {
+      font-size: 1.4rem;
+    }
+  }
+
+  .comment-list .children {
+    padding-left: 20px;
+  }
+
+  .comment-body,
+  .children .comment-body {
+    margin-left: 0;
+  }
+
+  .author-badge {
+    display: none;
+  }
+
+  .footer-bottom-info {
+    padding: 3rem 2rem;
+  }
 }

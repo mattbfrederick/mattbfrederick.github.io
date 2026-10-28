@@ -2,7 +2,9 @@
 
 The [finesine.com](https://finesine.com) blog, moved from WordPress.com to a
 [Jekyll](https://jekyllrb.com) site that GitHub Pages builds and hosts for free.
-It uses GitHub Pages' default theme, [minima](https://github.com/jekyll/minima).
+Its look recreates Dyad, the WordPress.com theme the blog used before: the
+header photo with the tagline, a grid of post cards, and Lato/Noto Serif type.
+The design lives in `_layouts/`, `_includes/` and `assets/main.scss`.
 
 ## Publish it on GitHub Pages
 
@@ -76,7 +78,8 @@ Central time. Upload images to `assets/images/YEAR/MONTH/`. An optional
 `description:` line sets the summary on the home page and in search results.
 
 To edit the About or Blogroll pages, change `about.md` or `blogroll.md`.
-Site title, description and social links are in `_config.yml`.
+Site title, tagline (`description`), header photo (`header_image`) and social
+links are in `_config.yml`.
 
 ## Preview on your own computer (optional)
 

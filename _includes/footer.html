@@ -1,0 +1,11 @@
+<footer class="site-footer">
+  <div class="footer-bottom-info">
+    <p class="site-info">
+      &copy; {{ site.time | date: "%Y" }} {{ site.author | escape }}
+      &middot; <a href="{{ "/feed.xml" | relative_url }}">RSS</a>
+      {%- if site.twitter_username %}
+      &middot; <a href="https://twitter.com/{{ site.twitter_username }}">@{{ site.twitter_username }}</a>
+      {%- endif %}
+    </p>
+  </div>
+</footer>

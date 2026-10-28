@@ -15,3 +15,4 @@ permalink: /blogroll/
 - [WiFiTodd.com](http://wifitodd.com/)
 - [Badger-Fi](https://badger-fi.com/)
 - [Glenn Cate WiFi](https://gcatewifi.wordpress.com/)
+{: .blogroll}

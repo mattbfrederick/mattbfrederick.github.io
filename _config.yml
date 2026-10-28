@@ -8,8 +8,10 @@ twitter:
   username: mattbfrederick
 timezone: America/Chicago
 
+# Layouts and styles live in this repo (_layouts, _includes, assets/main.scss);
+# minima is only a fallback for anything not overridden.
 theme: minima
-show_excerpts: true
+header_image: /assets/images/site/header.jpg
 
 # Same URL shape as the old WordPress site, e.g. /2016/01/14/setting-up-an-aruba-iap-for-a-site-survey/
 permalink: /:year/:month/:day/:title/

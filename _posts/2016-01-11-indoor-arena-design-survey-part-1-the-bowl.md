@@ -51,19 +51,19 @@ A catwalk or rigging structure suspended in the middle is by far your best optio
 [![inside out](/assets/images/2016/01/inside-out-600w.png){: width="300"}](/assets/images/2016/01/inside-out.png)
 
 *By aiming your antennas away from each other, you decrease your CCI and increase your chance of achieving actual spatial reuse*
-{: .caption}
+{: .caption style="max-width: 300px"}
 
 [![Example of a cat walk](/assets/images/2016/01/cat-walk-600w.png){: width="300"}](/assets/images/2016/01/cat-walk.png)
 
 *Example of a catwalk*
-{: .caption}
+{: .caption style="max-width: 300px"}
 
 Every indoor arena I have ever been to has had a catwalk. However, there are some that have even better options – like this lighting grid:
 
 [![Lighting/rigging grid](/assets/images/2016/01/grid-600w.jpg){: width="300"}](/assets/images/2016/01/grid.jpg)
 
 *Lighting/rigging grid*
-{: .caption}
+{: .caption style="max-width: 300px"}
 
 The lighting grid ends up being better than a catwalk because it increases the mounting area for your APs. This means you can have better AP spacing and mount in places that a catwalk would not normally allow.
 
@@ -76,7 +76,7 @@ Outer walls and overhangs are a bad idea in an indoor arena. You eliminate any c
 [![An example of what not to do](/assets/images/2016/01/outside-in-600w.png){: width="300"}](/assets/images/2016/01/outside-in.png)
 
 *An example of what not to do*
-{: .caption}
+{: .caption style="max-width: 300px"}
 
 You will see some outdoor stadiums with variations of this design and it almost always just due to lack of options.
 
@@ -87,7 +87,7 @@ Under the seats is an OK option in an indoor arena. It does keep your cell sizes
 [![Example of "under the seat" deployment](/assets/images/2016/01/undet-the-seat.png){: width="300"}](/assets/images/2016/01/undet-the-seat.png)
 
 *Example of “under the seat” deployment*
-{: .caption}
+{: .caption style="max-width: 300px"}
 
 This is normally the best option for outdoor arenas since you usually won’t have a permanent structure in the middle to mount to.
 
@@ -100,7 +100,7 @@ Under the concrete is a bad idea. Concrete introduces a much larger amount of at
 [![Example of "under the concrete" mounting](/assets/images/2016/01/under-concrete.png){: width="300"}](/assets/images/2016/01/under-concrete.png)
 
 *Example of “under the concrete” mounting*
-{: .caption}
+{: .caption style="max-width: 300px"}
 
 ## Figuring out your capacity requirements
 
@@ -119,31 +119,31 @@ Open concourses – Normally, there is a narrow opening every 20-30′ between t
 [![Open concourses](/assets/images/2016/01/gotcha1.png){: width="300"}](/assets/images/2016/01/gotcha1.png)
 
 *Open concourses*
-{: .caption}
+{: .caption style="max-width: 300px"}
 
 LoS obstructions – It’s good to walk to all areas of the bowl because you might find some sections or rows that have obstructions between them and your potential APs. Some examples…
 
 [![Top two rows obstructed by metal mesh. Also, metal mesh behind them will distort the signal.](/assets/images/2016/01/gotcha2-338w.jpg){: width="169"}](/assets/images/2016/01/gotcha2.jpg)
 
 *Top two rows obstructed by metal mesh. Also, metal mesh around them will cause massive attenuation*
-{: .caption}
+{: .caption style="max-width: 169px"}
 
 [![Top rows of lower bowl shadowed by overhang](/assets/images/2016/01/gotcha4-600w.jpg){: width="300"}](/assets/images/2016/01/gotcha4.jpg)
 
 *Top rows of lower bowl shadowed by overhang*
-{: .caption}
+{: .caption style="max-width: 300px"}
 
 [![I-beam ran alongside catwalk, creating an obstruction between the cat walk and lower seats](/assets/images/2016/01/gotcha3-600w.jpg){: width="300"}](/assets/images/2016/01/gotcha3.jpg)
 
 *I-beam ran alongside catwalk, creating an obstruction between the catwalk and lower seats*
-{: .caption}
+{: .caption style="max-width: 300px"}
 
 Configurable seating – Be aware of what seating is permanent and what seating is configurable. I have been to some arenas that have 25+ seating configurations.
 
 [![Configurable seating](/assets/images/2016/01/gotcha5-600w.jpg){: width="300"}](/assets/images/2016/01/gotcha5.jpg)
 
 *Configurable seating*
-{: .caption}
+{: .caption style="max-width: 300px"}
 
 There are some that you can design plausible solutions for. However, there are some that simply will do more damage than good. If you can create a solution that doesn’t degrade the system as a whole, then add it to the design. However, doing something like adding several APs and raising your CCI just to cover a single row isn’t a good idea. If you can’t design a solution that will benefit the overall system then note it as a potential problem area in the design.
 
@@ -154,7 +154,7 @@ I normally have the same process for every indoor arena. Once I have found a spo
 [![Bowl survey kit](/assets/images/2016/01/survey-kit-338w.jpg){: width="169"}](/assets/images/2016/01/survey-kit.jpg)
 
 *Bowl survey kit*
-{: .caption}
+{: .caption style="max-width: 169px"}
 
 Now, this is another case of having to know your vendor. I use Aruba IAPs. There are a couple of things you have to do to configure the IAP as a survey AP. You have to configure it to function as a Standalone AP and configure the SSID to work without a wired uplink. I will make a separate blog post on this. Whatever type of AP you are using, make sure it is configured and tested prior to hanging it. The catwalk is not a fun place to troubleshoot an AP.
 
@@ -167,7 +167,7 @@ Now that you have your survey kit built, it is time to hang it. To do this safel
 [![Survey kit installed on cat walk](/assets/images/2016/01/survey-kit-install-600w.jpg){: width="300"}](/assets/images/2016/01/survey-kit-install.jpg)
 
 *Survey kit installed on catwalk*
-{: .caption}
+{: .caption style="max-width: 300px"}
 
 When you mount the antennas, make sure they are aimed at the middle of a large section. Also, make sure that section has sections on both sides.
 
@@ -180,14 +180,14 @@ When performing the survey, I survey the main section and all of it’s borderin
 [![Survey path](/assets/images/2016/01/survey-path-600w.png){: width="300"}](/assets/images/2016/01/survey-path.png)
 
 *Survey path*
-{: .caption}
+{: .caption style="max-width: 300px"}
 
 Once you are finished with the survey, filter the results to show only the survey SSID. Then bring your cell size down to a -55 dBm cutoff. I recommend planning for -55 dBm cell sizes in the empty stadium because you can normally count on around 10 dBm of attenuation when the arena is full.
 
 [![Results filtered to survey SSID with -55 dBm cutoff](/assets/images/2016/01/survey-results-600w.png){: width="300"}](/assets/images/2016/01/survey-results.png)
 
 *Results filtered to survey SSID with -55 dBm cutoff*
-{: .caption}
+{: .caption style="max-width: 300px"}
 
 ## Plan your coverage
 
@@ -196,7 +196,7 @@ Now that we have our cell size, we can plan the coverage. This step is pretty si
 [![Coverage plan](/assets/images/2016/01/cc-bowl-aps-600w.png){: width="300"}](/assets/images/2016/01/cc-bowl-aps.png)
 
 *Coverage plan*
-{: .caption}
+{: .caption style="max-width: 300px"}
 
 Make sure you account for scorer’s/judge’s tables and floor seats. Using the 9,000 seat arena example from earlier, I need a minimum of 30 APs. My coverage plan gives me a total of 44 to cover everything I need. If evenly distributed, then each AP will have roughly 200 clients if everyone in the bowl was connected at the same time.
 

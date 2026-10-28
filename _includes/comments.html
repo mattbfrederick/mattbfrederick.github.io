@@ -3,26 +3,28 @@
 {%- endcomment -%}
 {%- assign comments = site.data.comments[page.slug] -%}
 {%- if comments %}
-<section class="comments" id="comments">
-  <h2>{{ comments.size }} {% if comments.size == 1 %}comment{% else %}comments{% endif %}</h2>
-  <ol class="comment-list">
-    {%- for comment in comments %}
-    {%- unless comment.parent %}
-    <li class="comment" id="comment-{{ comment.id }}">
-      {%- include comment.html comment=comment %}
-      {%- assign replies = comments | where: "parent", comment.id %}
-      {%- if replies.size > 0 %}
-      <ol class="comment-replies">
-        {%- for reply in replies %}
-        <li class="comment" id="comment-{{ reply.id }}">
-          {%- include comment.html comment=reply %}
-        </li>
-        {%- endfor %}
-      </ol>
-      {%- endif %}
-    </li>
-    {%- endunless %}
-    {%- endfor %}
-  </ol>
-</section>
+<div class="comments-area-wrapper">
+  <section class="comments-area" id="comments">
+    <h2 class="comments-title">{{ comments.size }} {% if comments.size == 1 %}Comment{% else %}Comments{% endif %}</h2>
+    <ol class="comment-list">
+      {%- for comment in comments %}
+      {%- unless comment.parent %}
+      <li class="comment{% if comment.name == site.author %} bypostauthor{% endif %}" id="comment-{{ comment.id }}">
+        {%- include comment.html comment=comment %}
+        {%- assign replies = comments | where: "parent", comment.id %}
+        {%- if replies.size > 0 %}
+        <ol class="children">
+          {%- for reply in replies %}
+          <li class="comment{% if reply.name == site.author %} bypostauthor{% endif %}" id="comment-{{ reply.id }}">
+            {%- include comment.html comment=reply %}
+          </li>
+          {%- endfor %}
+        </ol>
+        {%- endif %}
+      </li>
+      {%- endunless %}
+      {%- endfor %}
+    </ol>
+  </section>
+</div>
 {%- endif %}

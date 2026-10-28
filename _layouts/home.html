@@ -2,36 +2,34 @@
 layout: default
 ---
 {%- comment -%}
-  Based on minima 2.5.1's home layout. Excerpts use the post's `description`
-  when it has one, otherwise its first paragraph.
+  Home page modeled on the WordPress.com "Dyad" theme the blog used before:
+  a full-width header photo with the tagline, then a grid of post cards.
 {%- endcomment -%}
-<div class="home">
-  {%- if page.title -%}
-    <h1 class="page-heading">{{ page.title }}</h1>
-  {%- endif -%}
-
-  {{ content }}
-
-  {%- if site.posts.size > 0 -%}
-    <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
-    <ul class="post-list">
-      {%- for post in site.posts -%}
-      <li>
-        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-        <span class="post-meta">{{ post.date | date: date_format }}</span>
-        <h3>
-          <a class="post-link" href="{{ post.url | relative_url }}">
-            {{ post.title | escape }}
-          </a>
-        </h3>
-        {%- if site.show_excerpts -%}
-          <p>{{ post.description | default: post.excerpt | strip_html | truncatewords: 45 }}</p>
-        {%- endif -%}
-      </li>
-      {%- endfor -%}
-    </ul>
-
-    <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
-  {%- endif -%}
-
+<div class="site-banner">
+  <div class="site-banner-media" style="background-image: url('{{ site.header_image | relative_url }}');"></div>
+  <div class="site-banner-header">
+    <h1 class="site-banner-title">{{ site.description | escape }}</h1>
+  </div>
 </div>
+
+<main class="content-area">
+  <div class="posts">
+    {%- for post in site.posts %}
+    {%- if post.description %}
+      {%- assign summary = post.description %}
+    {%- else %}
+      {%- assign summary = post.excerpt | strip_html | truncatewords: 55, "…" %}
+    {%- endif %}
+    {%- assign summary_words = summary | number_of_words %}
+    <article class="post-card{% if summary_words < 30 %} is-short{% endif %}">
+      <span class="post-card-icon" aria-hidden="true">{% include icon-standard.svg %}</span>
+      <div class="post-card-content">
+        <h2 class="post-card-title"><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h2>
+        <p class="post-card-summary">{{ summary | escape }}</p>
+        <p class="link-more"><a href="{{ post.url | relative_url }}">Read more<span class="screen-reader-text"> of “{{ post.title | escape }}”</span></a></p>
+      </div>
+      <a class="cover-link" href="{{ post.url | relative_url }}" tabindex="-1" aria-hidden="true"></a>
+    </article>
+    {%- endfor %}
+  </div>
+</main>

@@ -1,45 +1,57 @@
 ---
 layout: default
 ---
-{%- comment -%}
-  Based on minima 2.5.1's post layout, plus tags, older/newer links and archived comments.
-{%- endcomment -%}
-<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+<div class="site-content">
+  <main class="content-area">
+    <article class="entry h-entry">
+      <span class="entry-icon" aria-hidden="true">{% include icon-standard.svg %}</span>
 
-  <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
-    <p class="post-meta">
-      <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
-        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-        {{ page.date | date: date_format }}
-      </time>
-      {%- if page.author -%}
-        • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author }}</span></span>
-      {%- endif -%}</p>
-  </header>
+      <header class="entry-header">
+        <h1 class="entry-title p-name">{{ page.title | escape }}</h1>
+        <div class="entry-posted">
+          Posted by <span class="p-author h-card">{{ page.author | default: site.author | escape }}</span>
+          on <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
+        </div>
+      </header>
 
-  <div class="post-content e-content" itemprop="articleBody">
-    {{ content }}
-  </div>
+      <div class="entry-content e-content">
+        {{ content }}
+      </div>
 
-  {%- if page.tags.size > 0 %}
-  <p class="post-tags">Tags:
-    {%- for tag in page.tags %}
-    <a href="{{ '/tags/' | relative_url }}#{{ tag | slugify }}">{{ tag }}</a>{% unless forloop.last %},{% endunless %}
-    {%- endfor %}
-  </p>
-  {%- endif %}
+      {%- if page.tags.size > 0 %}
+      <footer class="entry-footer">
+        <div class="tags-links">
+          {%- for tag in page.tags %}
+          <a href="{{ '/tags/' | relative_url }}#{{ tag | slugify }}" rel="tag">{{ tag }}</a>
+          {%- endfor %}
+        </div>
+      </footer>
+      {%- endif %}
 
-  <nav class="post-nav">
-    {%- if page.previous %}
-    <a class="post-nav-prev" href="{{ page.previous.url | relative_url }}">&larr; {{ page.previous.title | escape }}</a>
+      <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
+    </article>
+
+    {%- if page.previous or page.next %}
+    <nav class="post-navigation" aria-label="Posts">
+      {%- if page.previous %}
+      <div class="nav-previous">
+        <a href="{{ page.previous.url | relative_url }}" rel="prev">
+          <span class="nav-subtitle">Previous Post</span>
+          <span class="nav-title">{{ page.previous.title | escape }}</span>
+        </a>
+      </div>
+      {%- endif %}
+      {%- if page.next %}
+      <div class="nav-next">
+        <a href="{{ page.next.url | relative_url }}" rel="next">
+          <span class="nav-subtitle">Next Post</span>
+          <span class="nav-title">{{ page.next.title | escape }}</span>
+        </a>
+      </div>
+      {%- endif %}
+    </nav>
     {%- endif %}
-    {%- if page.next %}
-    <a class="post-nav-next" href="{{ page.next.url | relative_url }}">{{ page.next.title | escape }} &rarr;</a>
-    {%- endif %}
-  </nav>
+  </main>
 
   {%- include comments.html %}
-
-  <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
-</article>
+</div>
