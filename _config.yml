@@ -28,6 +28,7 @@ plugins:
 
 exclude:
   - README.md
+  - HOW-TO-POST.md
   - Gemfile
   - Gemfile.lock
   - vendor

@@ -54,28 +54,20 @@ changing DNS, so nobody else can claim it in between.
 
 ## Write a new post
 
-Add a file to `_posts/` named `YEAR-MONTH-DAY-title-with-dashes.md`. You can do
-this right on github.com with **Add file → Create new file**:
+See **[HOW-TO-POST.md](HOW-TO-POST.md)** for step-by-step directions. In short,
+add a file to `_posts/` named `YEAR-MONTH-DAY-title-with-dashes.md`, starting
+with:
 
-````markdown
+```markdown
 ---
 layout: post
 title: "My new post"
 tags: [aruba, wifi]
 ---
-
-Write in Markdown. **Bold**, *italic*, [a link](https://example.com).
-
-![Screenshot of the controller](/assets/images/2026/11/screenshot.png)
-
 ```
-(controller) #show ap database
-```
-````
 
-Commit it, and the live site updates about a minute later. Dates are in US
-Central time. Upload images to `assets/images/YEAR/MONTH/`. An optional
-`description:` line sets the summary on the home page and in search results.
+Write the post below that in Markdown and commit it. The live site updates
+about a minute later.
 
 To edit the About or Blogroll pages, change `about.md` or `blogroll.md`.
 Site title, tagline (`description`), header photo (`header_image`) and social
