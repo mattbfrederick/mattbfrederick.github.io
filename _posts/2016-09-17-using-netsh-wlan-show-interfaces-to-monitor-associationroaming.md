@@ -9,15 +9,15 @@ tags: ["command line", "netsh", "wifi", "windows 10", "windows 7", "windows 8", 
 
 In April, John Cosgrove (@rtr_man) posted the following way to monitor your WLAN association statistics that I have been using and playing with since:
 
-[![cfdpr2\_ueaag4v4](/assets/images/2016/09/cfdpr2_ueaag4v4.jpg){: width="300"}](/assets/images/2016/09/cfdpr2_ueaag4v4.jpg)
+[![cfdpr2\_ueaag4v4](/assets/images/2016/09/cfdpr2_ueaag4v4.jpg)](/assets/images/2016/09/cfdpr2_ueaag4v4.jpg)
 
 Once you paste from :loop to goto loop into notepad and save as a .bat file, you will see this little icon:
 
-[![new1](/assets/images/2016/09/new1.png){: width="70"}](/assets/images/2016/09/new1.png)
+[![new1](/assets/images/2016/09/new1.png)](/assets/images/2016/09/new1.png)
 
 Double-click that and it will open up your command line and it will look like this:
 
-[![22](/assets/images/2016/09/22-600w.png){: width="300"}](/assets/images/2016/09/22.png)
+[![22](/assets/images/2016/09/22-600w.png)](/assets/images/2016/09/22.png)
 
 If you’ve been working in WiFi for at least a little while, then you should know what most of these mean. Really important ones to pay attention to are BSSID (mac address of the radio of the AP you are connecting to) and Signal (received signal strength from AP).
 
@@ -42,17 +42,17 @@ You can replace “WLANstat” with whatever you want to name the file.
 
 Now when you run it, the output in the command line will look like this:
 
-[![33](/assets/images/2016/09/33-600w.png){: width="300"}](/assets/images/2016/09/33.png)
+[![33](/assets/images/2016/09/33-600w.png)](/assets/images/2016/09/33.png)
 
 Now you’re probably saying “What the heck, Matt?!? Now it’s not showing me any of the statistics! What a dumb blog.”
 
 Take a chill pill, friend, and look at your desktop. Notice anything different? Like maybe a text file that wasn’t there before? You should see a text file appear after you ran the batch file:
 
-[![34](/assets/images/2016/09/34.png){: width="76"}](/assets/images/2016/09/34.png)
+[![34](/assets/images/2016/09/34.png)](/assets/images/2016/09/34.png)
 
 Open the text file and now there is the output:
 
-[![35](/assets/images/2016/09/35-464w.png){: width="232"}](/assets/images/2016/09/35.png)
+[![35](/assets/images/2016/09/35-464w.png)](/assets/images/2016/09/35.png)
 
 Starting to trust me yet?
 
@@ -77,15 +77,15 @@ goto loop
 The string after the filename will append the date in the filename…..just for extra awesomeness….
 
 Now when you run the batch file, the output in the command line should look like this:  
-[![36](/assets/images/2016/09/36-600w.png){: width="300"}](/assets/images/2016/09/36.png)
+[![36](/assets/images/2016/09/36-600w.png)](/assets/images/2016/09/36.png)
 
 Now you should see a text file appear on your desktop with the date in the filename (YearDayMonth – you can play with the string if you want this different):
 
-[![37](/assets/images/2016/09/37.png){: width="104"}](/assets/images/2016/09/37.png)
+[![37](/assets/images/2016/09/37.png)](/assets/images/2016/09/37.png)
 
 When you open the text file, you should see the time above each output (Hour:Minute:Second.Millisecond – you can delete the “set time_ms” line if you don’t want the milliseconds):
 
-[![38](/assets/images/2016/09/38-460w.png){: width="230"}](/assets/images/2016/09/38.png)
+[![38](/assets/images/2016/09/38-460w.png)](/assets/images/2016/09/38.png)
 
 So, if you want to document the roaming behavior and perceived signal strength of a Windows client on the network without having to login to the network and look through logs, just open the batch file and walk around and close it when you are done. It’s super quick and easy and gives you some pretty valuable information.
 

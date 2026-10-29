@@ -23,21 +23,21 @@ I used to do my site surveys with a lightweight AP and a small controller. I hav
 8.  A few minutes after the IAP is fully booted, you will see the “Instant” SSID broadcasting. Connect the SSID and navigate to [https://instant.arubanetworks.com](https://instant.arubanetworks.com)
     1.  Default login is admin/admin
 9.  Once in the GUI, click “Maintenance” in the top-right corner to convert the IAP to Standalone mode (This configures the IAP to not look for other IAPs/Virtual Controllers):
-    1.  [![convert](/assets/images/2016/01/convert.png){: width="300"}](/assets/images/2016/01/convert.png)
-    2.  [![standalone](/assets/images/2016/01/standalone.png){: width="300"}](/assets/images/2016/01/standalone.png)
+    1.  [![convert](/assets/images/2016/01/convert.png)](/assets/images/2016/01/convert.png)
+    2.  [![standalone](/assets/images/2016/01/standalone.png)](/assets/images/2016/01/standalone.png)
 10. After converting to Standalone, create a new network:
-    1.  [![new ssid](/assets/images/2016/01/new-ssid1-600w.png){: width="300"}](/assets/images/2016/01/new-ssid1.png)
+    1.  [![new ssid](/assets/images/2016/01/new-ssid1-600w.png)](/assets/images/2016/01/new-ssid1.png)
 11. In the WLAN Settings tab, click “Show advanced options”:
-    1.  [![show advanced options](/assets/images/2016/01/show-advanced-options-600w.png){: width="300"}](/assets/images/2016/01/show-advanced-options.png)
+    1.  [![show advanced options](/assets/images/2016/01/show-advanced-options-600w.png)](/assets/images/2016/01/show-advanced-options.png)
 12. Uncheck the “Disable SSID on uplink failure” box:
-    1.  [![disable uplink failure](/assets/images/2016/01/disable-uplink-failure-600w.png){: width="300"}](/assets/images/2016/01/disable-uplink-failure.png)
+    1.  [![disable uplink failure](/assets/images/2016/01/disable-uplink-failure-600w.png)](/assets/images/2016/01/disable-uplink-failure.png)
 13. Then go through the rest of the steps programming your WLAN
 14. After setting up the new network, click on “RF” in the top-right corner and configure your RF settings (These settings keep the radio from making too many dynamic changes during your survey):
-    1.  [![rf config](/assets/images/2016/01/rf-config.png){: width="272"}](/assets/images/2016/01/rf-config.png)
+    1.  [![rf config](/assets/images/2016/01/rf-config.png)](/assets/images/2016/01/rf-config.png)
 15. Once those changes are done, reboot the IAP and you should see your new survey SSID show up after a few minutes
 
 On a side note, I use a 10′ telescoping mast like this for my surveys:
 
-[![2016-01-14 10.40.29](/assets/images/2016/01/2016-01-14-10-40-29-624w.jpg){: .aligncenter width="312"}](/assets/images/2016/01/2016-01-14-10-40-29.jpg)
+[![2016-01-14 10.40.29](/assets/images/2016/01/2016-01-14-10-40-29-624w.jpg){: .aligncenter}](/assets/images/2016/01/2016-01-14-10-40-29.jpg)
 
 Questions or comments? Leave them below and/or find me on twitter [@mattbfrederick](https://twitter.com/mattbfrederick)

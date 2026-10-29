@@ -19,6 +19,15 @@ $sans: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
 $serif: "Noto Serif", Georgia, serif;
 $mono: "Courier 10 Pitch", Courier, monospace;
 
+// Post widths. Text stays around 90 characters per line as the screen grows
+// (the font grows with it); code blocks, embeds and standalone images can use
+// the wider band. Values change at the breakpoints at the bottom of the file.
+:root {
+  --gutter: 32px;
+  --text: 720px;
+  --wide: 1240px;
+}
+
 // ------------------------------------------------------------------ base
 
 *,
@@ -468,8 +477,7 @@ pre {
 }
 
 .entry {
-  margin: 50px auto 0;
-  max-width: 700px;
+  margin: 50px 0 0;
   padding-bottom: 2rem;
   position: relative;
 
@@ -477,10 +485,13 @@ pre {
   &:before {
     border-top: 1px solid $rule;
     content: "";
-    left: 25%;
+    left: 0;
+    margin: 0 auto;
+    max-width: 350px;
     position: absolute;
-    right: 25%;
+    right: 0;
     top: 0;
+    width: 50%;
   }
 }
 
@@ -499,9 +510,18 @@ pre {
   width: 36px;
 }
 
+.entry-header,
+.entry-footer {
+  margin: 0 auto;
+  max-width: calc(var(--text) + 2 * var(--gutter));
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+}
+
 .entry-header {
   font-style: italic;
-  padding: 3rem 0 3em;
+  padding-bottom: 3em;
+  padding-top: 3rem;
   text-align: center;
 }
 
@@ -522,8 +542,41 @@ pre {
   }
 }
 
+// Three nested bands, all centered: text, wide, and full (edge to edge).
+// Everything sits in the text band unless a rule below moves it out.
 .entry-content {
+  display: grid;
+  font-size: 1.8rem;
+  grid-template-columns: unquote("[full-start] minmax(var(--gutter), 1fr) [wide-start] minmax(0, calc((var(--wide) - var(--text)) / 2)) [text-start] min(var(--text), 100% - 2 * var(--gutter)) [text-end] minmax(0, calc((var(--wide) - var(--text)) / 2)) [wide-end] minmax(var(--gutter), 1fr) [full-end]");
   line-height: 1.75;
+
+  > * {
+    grid-column: text;
+    min-width: 0;
+  }
+
+  // Code blocks grow only as wide as their longest line needs, up to the
+  // wide band; short ones line up with the text
+  > div.highlighter-rouge {
+    grid-column: wide;
+    justify-self: center;
+    max-width: 100%;
+    min-width: unquote("min(var(--text), 100%)");
+    width: max-content;
+  }
+
+  // Embeds, and anything marked {: .wide}, use the whole wide band
+  > iframe,
+  > .wide {
+    grid-column: wide;
+  }
+
+  // Images on their own line are centered and may use the wide band
+  > p:has(> img:only-child),
+  > p:has(> a:only-child > img:only-child) {
+    grid-column: wide;
+    text-align: center;
+  }
 
   a {
     text-decoration: underline;
@@ -533,7 +586,7 @@ pre {
   .caption {
     font-size: 80%;
     line-height: 1.38;
-    margin-top: -1.2em;
+    margin: -1.2em auto 0;
     text-align: center;
 
     em {
@@ -675,7 +728,8 @@ pre {
 .comments-area {
   font-size: 1.6rem;
   margin: 0 auto;
-  max-width: 900px;
+  max-width: calc(var(--text) + 2 * var(--gutter));
+  padding: 0 var(--gutter);
 }
 
 .comments-title {
@@ -787,9 +841,34 @@ pre {
 
 // ------------------------------------------------------------- responsive
 
+@media screen and (min-width: 1200px) {
+  :root {
+    --text: 760px;
+  }
+
+  .entry-content {
+    font-size: 1.9rem;
+  }
+
+  .comments-area {
+    font-size: 1.7rem;
+  }
+}
+
 @media screen and (min-width: 1401px) {
   .site-header {
     position: fixed;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  :root {
+    --text: 800px;
+    --wide: 1400px;
+  }
+
+  .entry-content {
+    font-size: 2rem;
   }
 }
 
@@ -923,23 +1002,18 @@ pre {
 
   .entry {
     margin-top: 90px;
-    max-width: 100%;
-    padding-left: 8%;
-    padding-right: 8%;
   }
 
   .entry-title {
     font-size: 3.5rem;
   }
-
-  .comments-area {
-    max-width: 100%;
-    padding-left: 8%;
-    padding-right: 8%;
-  }
 }
 
 @media screen and (max-width: 680px) {
+  :root {
+    --gutter: 20px;
+  }
+
   body {
     font-size: 1.6rem;
   }
@@ -1009,9 +1083,22 @@ pre {
   }
 
   .entry-content {
+    font-size: 1.7rem;
+
     .indent-1 { margin-left: 15px; }
     .indent-2 { margin-left: 30px; }
     .indent-3 { margin-left: 45px; }
+
+    // Code and embeds run edge to edge on phones
+    > div.highlighter-rouge,
+    > iframe {
+      grid-column: full;
+      min-width: 100%;
+    }
+
+    > div.highlighter-rouge pre {
+      padding-left: var(--gutter);
+    }
   }
 
   .post-navigation {

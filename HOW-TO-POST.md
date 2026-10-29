@@ -124,8 +124,12 @@ lab-ap-01    default   535      10.1.1.21
 The text in square brackets describes the image for screen readers and search
 engines. The part in parentheses is where the image lives in the repository,
 starting with a `/`. An image uploaded into an `assets/images/2026` folder,
-for example, is `/assets/images/2026/wifi7-heatmap.png`. Large images shrink
-to fit the page.
+for example, is `/assets/images/2026/wifi7-heatmap.png`.
+
+An image on a line by itself is centered. On big screens it can be wider than
+the text (up to about 1400 pixels), and on phones it shrinks to fit the
+screen. Code blocks work the same way: they widen as needed so long CLI output
+doesn't have to scroll.
 
 **Optional extras**
 

@@ -15,7 +15,7 @@ First is a flowchart for quick reference. Then below it is a more detailed overv
 
 ------------------------------------------------------------------------
 
-![BLOG-RF Tuning Process](/assets/images/2017/11/blog-rf-tuning-process.png){: width="1056"}
+![BLOG-RF Tuning Process](/assets/images/2017/11/blog-rf-tuning-process.png)
 
 ------------------------------------------------------------------------
 
@@ -23,7 +23,7 @@ First is a flowchart for quick reference. Then below it is a more detailed overv
 
 1.  Have onsite technician send you a screen capture of how their channels are configured
 
-![BLOG-RF Tuning Process2](/assets/images/2017/11/blog-rf-tuning-process2-e1510232144340.png){: width="1174"}![BLOG-RF Tuning Process3](/assets/images/2017/11/blog-rf-tuning-process3.png){: width="1009"}
+![BLOG-RF Tuning Process2](/assets/images/2017/11/blog-rf-tuning-process2-e1510232144340.png)![BLOG-RF Tuning Process3](/assets/images/2017/11/blog-rf-tuning-process3.png)
 
 2\. Verify with technician that they are on the latest version of Ekahau
 
@@ -41,18 +41,18 @@ First is a flowchart for quick reference. Then below it is a more detailed overv
 
 9\. Double check channel configuration and \# of NICs using RTFM and Survey tab
 
-![BLOG-RF Tuning Process4](/assets/images/2017/11/blog-rf-tuning-process4-e1510232172289.png){: width="1099"}![BLOG-RF Tuning Process5](/assets/images/2017/11/blog-rf-tuning-process5-e1510232202933.png){: width="1599"}
+![BLOG-RF Tuning Process4](/assets/images/2017/11/blog-rf-tuning-process4-e1510232172289.png)![BLOG-RF Tuning Process5](/assets/images/2017/11/blog-rf-tuning-process5-e1510232202933.png)
 
 You can see the recorded information to verify that the correct channels were confirmed per NIC. Big red flags is seeing whole UNII bands missing or missing a radio in the Access Points tab on the survey. Double check what they are seeing in this view vs the “show ap active” from the controller to make sure we are seeing SSIDs on the channels the APs are broadcasting on. If the channel configuration was not correct, the onsite resource HAS to re-walk the site.
 {: .indent-1}
 
 10\. Remove survey paths from view
 
-![BLOG-RF Tuning Process6](/assets/images/2017/11/blog-rf-tuning-process6-e1510231387950.png){: width="1550"}
+![BLOG-RF Tuning Process6](/assets/images/2017/11/blog-rf-tuning-process6-e1510231387950.png)
 
 11\. Filter signal strength view to only include your APs
 
-![BLOG-RF Tuning Process7](/assets/images/2017/11/blog-rf-tuning-process7.png){: width="1599"}
+![BLOG-RF Tuning Process7](/assets/images/2017/11/blog-rf-tuning-process7.png)
 
 12\. Start identifying coverage gaps and moving APs to the next power group as needed.
 
