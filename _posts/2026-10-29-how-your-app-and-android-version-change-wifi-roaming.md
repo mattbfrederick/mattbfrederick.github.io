@@ -66,14 +66,18 @@ The signal was a little lower at the moment of the roam on this one. The median 
 
 This is the one that stands out. Only three roams in about 163 seconds, and none of them used 11r. No Fast Transition and no reassociation. Instead, every roam shows a deauth. The client also barely probed: one or two probes per roam, compared with 50 to 100 in the other three runs.
 
+The deauths here aren't a roam in the way we normally think of one. The client was no longer able to pass traffic on its WiFi connection, so the OS forcibly disconnected it. The "roam" you see is the device rediscovering the network and connecting again.
+
 It also stayed on an AP for a long time while the signal got bad. The RSSI dropped to -86 dBm at the lowest point, and the first roam happened with the signal around -84 dBm. For comparison, the lowest RSSI in the Android 11 shopping run was -71 dBm.
+
+Why would a VoIP call make the device so reluctant to roam? The main theory is that the call itself is influencing the device not to roam, because it suspects a roam will interrupt the call. My guess is that this is old logic from when networks were designed for coverage and didn't have fast roaming mechanisms like 802.11r. That's a theory, not something this test proves, but it fits what the data shows: the client held on to a weak AP until the connection broke.
 
 ## Takeaways
 
 - **The infrastructure was identical, but the roaming wasn't.** 11k/r/v was enabled, but it was only used on three of the four runs. Having 802.11r turned on doesn't guarantee the client will use it for every app on every OS version.
 - **The app matters as much as the OS.** Android 11 roamed cleanly with the shopping app and very differently on the VoIP call. If I had only tested one app, I would have told you the wrong story about Android 11.
 - **Test with the apps your users really run.** A roam that looks great with a web browser or a shopping app doesn't tell you anything about voice. The VoIP call is the scenario where a slow or sticky roam hurts the most, and it's the one that has to be tested.
-- **Look at the frames.** The capture is what shows whether a roam was a Fast Transition with a reassociation or a deauth, which is a very different experience for the client.
+- **Look at the frames.** The capture is what shows whether a roam was a Fast Transition with a reassociation or a forced disconnect followed by a full reconnect, which is a very different experience for the client.
 
 Keep in mind this is one device, one store and one walk for each scenario, so treat it as a data point and not a rule. If you've seen the same on other devices or OS versions, I'd like to hear about it.
 

@@ -32,4 +32,4 @@ I hold a number of certifications.
 - CWNA (Certified Wireless Network Administrator)
 - Completed certification courses for Firetide, Strix, Bridgewave, Xirrus, Ceragon
 
-You can contact me via twitter [@mattbfrederick](https://twitter.com/mattbfrederick)
+You can contact me via [LinkedIn](https://www.linkedin.com/in/matthew-frederick-b2220b84)
