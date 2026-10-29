@@ -19,7 +19,6 @@ permalink: /:year/:month/:day/:title/
 
 header_pages:
   - about.md
-  - blogroll.md
 
 plugins:
   - jekyll-feed

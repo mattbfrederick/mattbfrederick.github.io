@@ -69,7 +69,7 @@ tags: [aruba, wifi]
 Write the post below that in Markdown and commit it. The live site updates
 about a minute later.
 
-To edit the About or Blogroll pages, change `about.md` or `blogroll.md`.
+To edit the About page, change `about.md`.
 Site title, tagline (`description`), header photo (`header_image`) and social
 links are in `_config.yml`.
 
@@ -87,9 +87,10 @@ Then open <http://localhost:4000>.
 
 ## What changed in the move
 
-- **URLs are the same** for every post (`/2016/01/14/post-name/`), `/about/` and
-  `/blogroll/`. Old tag pages (`/tag/wifi/`), `/page/2/` and
-  `/category/uncategorized/` redirect to their new equivalents.
+- **URLs are the same** for every post (`/2016/01/14/post-name/`) and `/about/`.
+  Old tag pages (`/tag/wifi/`), `/page/2/` and `/category/uncategorized/`
+  redirect to their new equivalents. The Blogroll page was removed, and
+  `/blogroll/` now redirects to the home page.
 - **RSS feed** is now `/feed.xml`. The old `/feed/` address redirects in a
   browser, but feed readers may need the new URL.
 - **Comments.** The 11 existing comments are kept, read-only, under their posts

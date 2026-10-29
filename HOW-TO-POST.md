@@ -243,5 +243,4 @@ text that contains {{ or {%
 ---
 
 Other settings live elsewhere. The site title, tagline, header photo and
-Twitter handle are in `_config.yml`. The About and Blogroll pages are
-`about.md` and `blogroll.md`.
+LinkedIn link are in `_config.yml`. The About page is `about.md`.
