@@ -1,0 +1,7 @@
+{%- assign tp_s = include.post.tags | join: " " | append: " " | append: include.post.title | downcase -%}
+{%- if tp_s contains "roaming" or tp_s contains "netsh" -%}roaming|Roaming
+{%- elsif tp_s contains "arena" or tp_s contains "venue" -%}venue|Venue design
+{%- elsif tp_s contains "survey" or tp_s contains "ekahau" -%}surveys|Surveys
+{%- elsif tp_s contains "aruba" -%}aruba|Aruba
+{%- elsif tp_s contains "consult" -%}career|Consulting
+{%- else -%}wifi|WiFi{%- endif -%}

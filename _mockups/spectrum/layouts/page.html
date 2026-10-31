@@ -1,0 +1,14 @@
+---
+layout: default
+---
+<main id="main" class="page">
+  <article class="entry">
+    <header class="entry-header">
+      <p class="crumbs"><a href="{{ "/" | relative_url }}">~</a> / {{ page.title | downcase | escape }}</p>
+      <h1 class="entry-title">{{ page.title | escape }}</h1>
+    </header>
+    <div class="entry-content">
+      {{ content }}
+    </div>
+  </article>
+</main>

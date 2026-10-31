@@ -1,0 +1,51 @@
+---
+layout: default
+---
+{%- assign latest = site.posts.first %}
+<main id="main" class="home">
+  <section class="hero">
+    <svg class="hero-spectrum" viewBox="0 0 1200 420" preserveAspectRatio="none" aria-hidden="true">{% include spectrum-paths.svg %}</svg>
+    <div class="wrap hero-inner">
+      <p class="eyebrow">// a wireless networking blog</p>
+      <h1 class="hero-title">Wireless networking, <span>from the RF&nbsp;up.</span></h1>
+      <p class="hero-text">Design surveys, Aruba how-tos and roaming deep dives by <a href="{{ "/about/" | relative_url }}">Matt Frederick</a>, CWNE&nbsp;#197.</p>
+      <p class="legend" aria-hidden="true"><span class="l-mint">ch 1</span><span class="l-blue">ch 6</span><span class="l-amber">ch 11</span></p>
+    </div>
+  </section>
+
+  <section class="wrap latest" aria-label="Latest post">
+    {%- capture latest_img %}{% include first-image.html post=latest %}{% endcapture %}
+    <a class="latest-card" href="{{ latest.url | relative_url }}">
+      <div class="latest-body">
+        <p class="label"><span class="dot" aria-hidden="true"></span>latest post</p>
+        <h2 class="latest-title">{{ latest.title | escape }}</h2>
+        <p class="latest-summary">{% include summary.html post=latest words=40 %}</p>
+        <p class="meta">{{ latest.date | date: "%Y-%m-%d" }} <span>·</span> {% include reading-time.html content=latest.content %}</p>
+      </div>
+      {%- if latest_img != "" %}
+      <div class="latest-art"><img src="{{ latest_img }}" alt="" loading="lazy"></div>
+      {%- endif %}
+    </a>
+  </section>
+
+  <section class="wrap topics" aria-label="Popular topics">
+    {% include top-tags.html limit=12 %}
+  </section>
+
+  <section class="wrap posts" id="posts" aria-labelledby="posts-label">
+    <h2 class="section-title" id="posts-label">All posts <span>{{ site.posts.size }}</span></h2>
+    <div class="card-grid">
+      {%- for post in site.posts offset: 1 %}
+      <article class="card">
+        <p class="card-meta">
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y-%m-%d" }}</time>
+          {%- if post.tags.size > 0 %}<span class="chip chip-sm">{{ post.tags.first }}</span>{% endif %}
+        </p>
+        <h3 class="card-title"><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h3>
+        <p class="card-summary">{% include summary.html post=post words=26 %}</p>
+        <p class="card-more" aria-hidden="true">read →</p>
+      </article>
+      {%- endfor %}
+    </div>
+  </section>
+</main>

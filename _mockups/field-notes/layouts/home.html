@@ -1,0 +1,44 @@
+---
+layout: default
+---
+{%- assign latest = site.posts.first %}
+<main id="main" class="home">
+  <section class="intro wrap">
+    <h1 class="intro-title">Notes on wireless networking, from&nbsp;the&nbsp;field.</h1>
+    <p class="intro-text">WLAN design, site surveys, Aruba how-tos and roaming deep dives by <a href="{{ "/about/" | relative_url }}">Matt Frederick</a>, CWNE&nbsp;#197.</p>
+  </section>
+
+  <section class="featured wrap" aria-labelledby="latest-label">
+    <p class="eyebrow" id="latest-label">Latest</p>
+    <article class="featured-post">
+      <h2 class="featured-title"><a href="{{ latest.url | relative_url }}">{{ latest.title | escape }}</a></h2>
+      <p class="featured-summary">{% include summary.html post=latest words=40 %}</p>
+      <p class="meta">
+        <time datetime="{{ latest.date | date_to_xmlschema }}">{{ latest.date | date: "%B %-d, %Y" }}</time>
+        <span aria-hidden="true">·</span> {% include reading-time.html content=latest.content %}
+      </p>
+      <a class="read-link" href="{{ latest.url | relative_url }}">Read the post <span aria-hidden="true">→</span></a>
+    </article>
+  </section>
+
+  <section class="archive wrap" aria-labelledby="archive-label">
+    <h2 class="section-label" id="archive-label">All writing</h2>
+    {%- assign years = site.posts | group_by_exp: "p", "p.date | date: '%Y'" %}
+    {%- for y in years %}
+    <div class="year-group">
+      <h3 class="year">{{ y.name }}</h3>
+      <ol class="post-list">
+        {%- for post in y.items %}
+        <li class="post-item">
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d" }}</time>
+          <div>
+            <a class="post-item-title" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+            <p class="post-item-summary">{% include summary.html post=post words=24 %}</p>
+          </div>
+        </li>
+        {%- endfor %}
+      </ol>
+    </div>
+    {%- endfor %}
+  </section>
+</main>

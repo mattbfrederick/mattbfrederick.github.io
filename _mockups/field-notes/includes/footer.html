@@ -1,0 +1,11 @@
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-brand">{% include logo.svg %} FineSine</p>
+    <p class="footer-links">
+      <a href="{{ "/feed.xml" | relative_url }}">RSS</a>
+      {%- if site.linkedin_url %}<a href="{{ site.linkedin_url }}">LinkedIn</a>{% endif %}
+      <a href="{{ "/about/" | relative_url }}">About</a>
+    </p>
+    <p class="copyright">&copy; {{ site.time | date: "%Y" }} {{ site.author | escape }}</p>
+  </div>
+</footer>
