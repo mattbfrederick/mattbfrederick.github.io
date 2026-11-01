@@ -15,7 +15,7 @@ theme: minima
 
 # Home page intro. intro_text can use Markdown for links.
 intro_title: "Notes on wireless networking, from the field."
-intro_text: "WLAN design, site surveys, Aruba how-tos and roaming deep dives by [Matt Frederick](/about/), CWNE #197."
+intro_text: "WLAN design, site surveys, how-tos and roaming deep dives by [Matt Frederick](/about/), CWNE #197."
 
 # Author card at the end of every post (LinkedIn link is added after it)
 author_initials: MF
