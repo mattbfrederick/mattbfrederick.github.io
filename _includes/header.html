@@ -1,17 +1,10 @@
 <header class="site-header">
-  <div class="site-branding">
-    <p class="site-title"><a href="{{ "/" | relative_url }}" rel="home">{{ site.title | escape }}</a></p>
-  </div>
-  {%- if site.header_pages %}
-  <nav class="main-navigation" aria-label="Main">
-    <ul>
-      {%- for path in site.header_pages %}
-      {%- assign nav_page = site.pages | where: "path", path | first %}
-      {%- if nav_page.title %}
-      <li><a href="{{ nav_page.url | relative_url }}">{{ nav_page.title | escape }}</a></li>
-      {%- endif %}
+  <div class="wrap">
+    <a class="brand" href="{{ "/" | relative_url }}" rel="home">{% include logo.svg %}<span>{{ site.title | escape }}</span></a>
+    <nav class="site-nav" aria-label="Main">
+      {%- for item in site.navigation %}
+      <a href="{{ item.url | relative_url }}"{% if page.url == item.url %} aria-current="page"{% endif %}>{{ item.title | escape }}</a>
       {%- endfor %}
-    </ul>
-  </nav>
-  {%- endif %}
+    </nav>
+  </div>
 </header>

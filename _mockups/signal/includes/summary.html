@@ -1,2 +1,0 @@
-{%- if include.post.description -%}{%- assign s = include.post.description -%}{%- else -%}{%- assign s = include.post.excerpt | strip_html -%}{%- endif -%}
-{{ s | strip_newlines | truncatewords: include.words, "…" | escape }}

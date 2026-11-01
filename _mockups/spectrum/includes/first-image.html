@@ -1,2 +1,0 @@
-{%- assign fi_parts = include.post.content | split: '<img src="' -%}
-{%- if fi_parts.size > 1 -%}{{ fi_parts[1] | split: '"' | first }}{%- endif -%}

@@ -15,9 +15,6 @@ to install.
 5. About a minute later it's live at
    `https://finesine.com/2026/11/03/wifi-7-first-impressions/`.
 
-(Until `finesine.com` is pointed at GitHub, the site's address is
-`https://mattbfrederick.github.io/` instead.)
-
 The rest of this page explains each step and covers images, formatting, drafts
 and fixing problems.
 
@@ -63,8 +60,8 @@ More text...
 |---|---|
 | `layout: post` | Always leave this as is. |
 | `title:` | The post's title. Keep the quotes, especially if the title has a colon (`:`) in it. |
-| `tags:` | Comma-separated, inside `[ ]`. Tags are case-sensitive, so reuse the spelling of existing ones (`wifi`, `aruba`, `ekahau`, `Survey`…). The full list is on the [Tags page](https://mattbfrederick.github.io/tags/). Leave the line out if you don't want tags. |
-| `description:` | *Optional.* The summary shown on the home page card and in Google results. Without it, the first paragraph is used. |
+| `tags:` | Comma-separated, inside `[ ]`. Tags are case-sensitive, so reuse the spelling of existing ones (`wifi`, `aruba`, `ekahau`, `Survey`…). The full list is on the [Topics page](https://finesine.com/tags/). The first tag is also shown above the post's title. Leave the line out if you don't want tags. |
+| `description:` | *Optional.* The summary shown on the home page and in Google results. Without it, the first paragraph is used. |
 
 ## 3. Write the post
 
@@ -89,8 +86,8 @@ paragraph is ignored. To force a line break, end the line with two spaces.
 ### CLI output and config
 
 Put commands or output between two lines of three backticks. Spacing and
-straight quotes are kept exactly as typed, and the block gets the yellow code
-tab on the right:
+straight quotes are kept exactly as typed, and the block gets a shaded box in a
+code font:
 
 ````markdown
 ```
@@ -127,7 +124,7 @@ starting with a `/`. An image uploaded into an `assets/images/2026` folder,
 for example, is `/assets/images/2026/wifi7-heatmap.png`.
 
 An image on a line by itself is centered. On big screens it can be wider than
-the text (up to about 1400 pixels), and on phones it shrinks to fit the
+the text (up to about 1040 pixels), and on phones it shrinks to fit the
 screen. Code blocks work the same way: they widen as needed so long CLI output
 doesn't have to scroll.
 
@@ -242,5 +239,7 @@ text that contains {{ or {%
 
 ---
 
-Other settings live elsewhere. The site title, tagline, header photo and
-LinkedIn link are in `_config.yml`. The About page is `about.md`.
+Other settings live elsewhere. The site title, the home page headline
+(`intro_title` and `intro_text`), the author note under each post
+(`author_bio`), the top menu and the LinkedIn link are in `_config.yml`. The
+About page is `about.md`.

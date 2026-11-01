@@ -2,9 +2,11 @@
 
 The [finesine.com](https://finesine.com) blog, moved from WordPress.com to a
 [Jekyll](https://jekyllrb.com) site that GitHub Pages builds and hosts for free.
-Its look recreates Dyad, the WordPress.com theme the blog used before: the
-header photo with the tagline, a grid of post cards, and Lato/Noto Serif type.
-The design lives in `_layouts/`, `_includes/` and `assets/main.scss`.
+The design, "Field Notes" (2026), is editorial and quiet: a warm off-white
+page, Newsreader serif for reading, Inter for menus and labels, and one
+burnt-orange accent. The home page lists every post by year. The design lives in
+`_layouts/`, `_includes/` and `assets/main.scss`. Its colors, fonts and widths
+are the settings at the top of `assets/main.scss`.
 
 ## Publish it on GitHub Pages
 
@@ -69,9 +71,14 @@ tags: [aruba, wifi]
 Write the post below that in Markdown and commit it. The live site updates
 about a minute later.
 
-To edit the About page, change `about.md`.
-Site title, tagline (`description`), header photo (`header_image`) and social
-links are in `_config.yml`.
+To edit the About page, change `about.md`. These are in `_config.yml`:
+
+- `intro_title` and `intro_text`: the big headline and sentence at the top of the
+  home page
+- `author_bio`: the "about the author" note at the end of every post
+- `navigation`: the menu at the top of every page
+- `description`: the one-line summary search engines and feed readers show
+- `title` and `linkedin_url`
 
 ## Preview on your own computer (optional)
 
@@ -103,5 +110,8 @@ Then open <http://localhost:4000>.
 - **Images** live in `assets/images/YEAR/MONTH/`. Posts that showed a
   WordPress thumbnail use a resized copy (`-600w` etc.) that links to the
   full-size original.
+- **Design.** The site first moved over with a copy of the old WordPress
+  theme (Dyad). It was redesigned in November 2026. The Tags page is now called
+  Topics but keeps its `/tags/` address.
 - **WordPress followers** (7) don't carry over. You can export the list from
   WordPress.com if you want to let them know about the move.

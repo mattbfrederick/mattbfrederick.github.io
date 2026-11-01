@@ -1,0 +1,5 @@
+<div class="author-card">
+  <span class="author-initials" aria-hidden="true">{{ site.author_initials }}</span>
+  <p>{{ site.author_bio | markdownify | remove: "<p>" | remove: "</p>" | strip }}
+    {%- if site.linkedin_url %} <a href="{{ site.linkedin_url }}">Say hello on LinkedIn</a>.{% endif %}</p>
+</div>
