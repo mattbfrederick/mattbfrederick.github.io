@@ -1,0 +1,8 @@
+{%- comment -%}
+  Visitor stats from GoatCounter (no cookies). Only on the live site: GitHub
+  Pages builds with JEKYLL_ENV=production, local previews don't.
+  Dashboard: https://{{ site.goatcounter }}.goatcounter.com
+{%- endcomment -%}
+{%- if site.goatcounter and jekyll.environment == "production" %}
+<script data-goatcounter="https://{{ site.goatcounter }}.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+{%- endif %}

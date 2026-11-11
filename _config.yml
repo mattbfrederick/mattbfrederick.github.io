@@ -9,6 +9,9 @@ twitter:
   username: mattbfrederick
 timezone: America/Chicago
 
+# Visitor stats: https://finesine.goatcounter.com (remove this line to turn off)
+goatcounter: finesine
+
 # Layouts and styles live in this repo (_layouts, _includes, assets/main.scss);
 # minima is only a fallback for anything not overridden.
 theme: minima

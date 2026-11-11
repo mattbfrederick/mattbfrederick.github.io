@@ -45,6 +45,9 @@ this on 2026-10-31 as a rare case, since few people type `www`.
   `redesign` branch, commit 5572c9d.
 - Old WordPress posts use `{: .caption}`, `{: .aligncenter}` and
   `{: .indent-1}`–`.indent-3`. Keep those classes styled.
+- Visitor stats: GoatCounter, code `finesine` (`goatcounter:` in `_config.yml`,
+  `_includes/analytics.html`). The script loads only when
+  `jekyll.environment == "production"`, which GitHub Pages sets.
 - Future-dated posts aren't published.
 - `jekyll-optional-front-matter` turns any root `.md` file into a page, so new
   notes files like this one must go in `exclude:` in `_config.yml`.

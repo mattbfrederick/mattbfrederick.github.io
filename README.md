@@ -71,6 +71,9 @@ tags: [aruba, wifi]
 Write the post below that in Markdown and commit it. The live site updates
 about a minute later.
 
+**Visitor stats** are at <https://finesine.goatcounter.com> (GoatCounter, no
+cookies). The `goatcounter` setting in `_config.yml` turns them on.
+
 To edit the About page, change `about.md`. These are in `_config.yml`:
 
 - `intro_title` and `intro_text`: the big headline and sentence at the top of the
